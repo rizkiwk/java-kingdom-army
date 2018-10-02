@@ -1,0 +1,564 @@
+
+Test Case
+UNCOMMITTED CHANGES
+
+No changes
+OPEN FILES
+
+input-test.txt
+KingdomArmy.java
+readme.txt
+result.txt
+FOLDERS
+
+Working Set...
+Test Case
+kingdom_army
+puzzle_string
+input.in
+input.txt
+PuzzleString.java
+readme.txt
+Add Project Folder
+Add Remote Project Folder
+KingdomArmy.java
+readme.txt
+input-test.txt
+result.txt
+  1
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+
+
+          if ((contested.size() / 2) > 0) {
+              System.out.println("contested "+String.valueOf((contested.size() / 2)));
+          }
+          // System.out.println("contested[] "+contested.toString());
+          // System.out.println("armies[] "+contested.toString());
+      }
+  }
+
+  void showArmyContested(char kingdomBlock[][], int r, int c) {
+    if (Character.isLetter(kingdomBlock[r][c])) {
+        String kingdomArea  = String.valueOf(kingdomBlock[r][c]);
+        String armyValue    = "";
+        Integer armyCount   = 0;
+
+        countArmySameArea(kingdomArea, "", armies);
+
+        // Top army move.
+        for (int ii = r - 1 ; ii >= 0; ii--) {
+            String indexRow = String.valueOf(kingdomBlock[ii][c]);
+            if (indexRow.equalsIgnoreCase("#")) break;
+            if (Character.isLetter(kingdomBlock[ii][c])) countArmySameArea(kingdomArea, indexRow, armies);
+
+            // Indexing top => left.
+            for (int jj = c - 1; jj + 1 > 0; jj--) {
+                String indexCol = String.valueOf(kingdomBlock[ii][jj]);
+                if (indexCol.equalsIgnoreCase("#")) break;
+
+                // Indexing top => left => top.
+                for (int tlt = ii - 1; tlt + 1 > 0; tlt--) {
+                    String indexColTlt = String.valueOf(kingdomBlock[tlt][jj]);
+                    if (indexColTlt.equalsIgnoreCase("#")) break;
+                    if (Character.isLetter(kingdomBlock[tlt][jj])) {
+                        countArmySameArea(kingdomArea, indexColTlt, armies);
+                    }
+                }
+                    // System.out.println("tlb["+tlb+"]["+jj+"]: value["+String.valueOf(kingdomBlock[tlb][jj])+"]");
+Java - KingdomArmy.java:88
+Case 1:
+contested 4
+Case 2:
+contested 8
+Case 3:
+b 1
+i 1
+contested 5
+Case 4:
+Case 5:
+h 2
+x 5
+contested 11
+Case 6:
+contested 10
+Case 7:
+Case 8:
+f 1
+g 1
+h 1
+j 2
+o 2
+contested 2
+Case 9:
+contested 3
+Case 10:
+v 1
+contested 12
+Case 11:
+g 2
+k 1
+p 1
+x 1
+contested 3
+Case 12:
+contested 5
+Case 13:
+contested 8
+Case 14:
+contested 6
+Case 15:
+contested 10
+Case 16:
+g 1
+o 1
+p 1
+contested 1
+Case 17:
+contested 9
+Case 18:
+d 1
+e 1
+n 2
+w 1
+contested 2
+Case 19:
+contested 5
+Case 20:
+contested 9
+Case 21:
+Case 22:
+contested 9
+Case 23:
+a 2
+b 7
+c 1
+d 1
+e 1
+f 11
+g 6
+i 2
+j 5
+k 7
+l 2
+m 8
+n 4
+o 2
+r 1
+s 5
+t 1
+u 5
+v 1
+x 1
+z 4
+Case 24:
+contested 8
+Case 25:
+c 2
+x 1
+contested 2
+Case 26:
+Case 27:
+Case 28:
+b 2
+f 1
+h 2
+n 1
+contested 4
+Case 29:
+f 2
+g 4
+k 7
+l 2
+n 17
+t 9
+w 2
+contested 6
+Case 30:
+f 1
+m 1
+o 3
+w 1
+z 4
+contested 4
+Case 31:
+a 2
+d 1
+w 1
+contested 3
+Case 32:
+a 4
+z 1
+contested 8
+Case 33:
+contested 8
+Case 34:
+contested 4
+Case 35:
+contested 13
+Case 36:
+contested 13
+Case 37:
+c 1
+m 1
+n 1
+t 1
+z 1
+Case 38:
+d 4
+f 4
+i 5
+j 5
+k 5
+l 12
+n 26
+q 1
+s 9
+t 7
+u 2
+w 1
+x 16
+y 14
+z 2
+contested 1
+Case 39:
+contested 9
+Case 40:
+Case 41:
+c 9
+f 12
+i 3
+j 7
+m 9
+p 1
+s 10
+v 16
+w 4
+z 12
+Case 42:
+g 4
+k 1
+o 1
+p 3
+q 1
+r 2
+s 2
+contested 1
+Case 43:
+contested 12
+Case 44:
+contested 5
+Case 45:
+l 2
+n 1
+x 5
+contested 10
+Case 46:
+m 2
+x 1
+contested 10
+Case 47:
+g 2
+l 1
+contested 6
+Case 48:
+l 3
+m 1
+p 3
+t 11
+v 4
+y 2
+contested 10
+Case 49:
+g 1
+k 1
+p 1
+r 1
+t 1
+z 1
+Case 50:
+a 25
+b 33
+c 17
+e 35
+f 5
+g 22
+h 18
+i 34
+j 14
+l 30
+m 29
+n 32
+p 18
+r 18
+s 26
+t 54
+v 22
+w 30
+y 30
+z 14
+Case 51:
+contested 3
+Case 52:
+a 2
+e 1
+i 1
+w 1
+z 1
+Case 53:
+contested 4
+Case 54:
+contested 4
+Case 55:
+contested 13
+Case 56:
+contested 11
+Case 57:
+contested 5
+Case 58:
+a 7
+b 2
+c 5
+d 3
+e 12
+f 2
+g 16
+h 2
+i 3
+j 9
+k 3
+l 4
+m 5
+n 3
+o 4
+p 8
+q 1
+r 4
+s 3
+t 11
+u 6
+v 7
+w 22
+x 7
+y 1
+z 15
+Case 59:
+c 3
+d 8
+f 7
+q 9
+r 1
+y 2
+contested 6
+Case 60:
+contested 11
+Case 61:
+a 29
+b 2
+c 8
+d 1
+f 2
+g 4
+i 6
+j 4
+k 7
+o 1
+t 3
+v 3
+w 7
+contested 1
+Case 62:
+a 2
+d 1
+e 1
+f 2
+i 1
+m 1
+n 2
+o 2
+p 1
+q 2
+t 1
+v 1
+z 1
+contested 2
+Case 63:
+contested 5
+Case 64:
+a 125
+b 168
+d 148
+e 98
+f 89
+g 84
+h 154
+j 78
+k 31
+m 99
+n 107
+o 80
+p 154
+q 127
+r 131
+t 151
+v 154
+w 97
+z 39
+Case 65:
+a 4
+d 7
+e 3
+g 4
+m 16
+n 1
+q 1
+s 10
+u 7
+w 2
+z 5
+Case 66:
+contested 13
+Case 67:
+contested 6
+Case 68:
+v 2
+contested 12
+Case 69:
+contested 10
+Case 70:
+d 1
+e 2
+i 1
+j 1
+k 2
+o 1
+p 1
+q 1
+r 1
+t 1
+w 1
+x 1
+z 1
+Case 71:
+contested 5
+Case 72:
+h 3
+p 2
+v 3
+x 2
+contested 9
+Case 73:
+contested 11
+Case 74:
+contested 13
+Case 75:
+contested 7
+Case 76:
+contested 6
+Case 77:
+s 1
+z 1
+contested 2
+Case 78:
+b 1
+p 1
+Case 79:
+contested 3
+Case 80:
+contested 12
+Case 81:
+contested 2
+Case 82:
+j 5
+contested 4
+Case 83:
+contested 9
+Case 84:
+contested 13
+Case 85:
+e 5
+contested 7
+Case 86:
+Case 87:
+contested 8
+Case 88:
+contested 5
+Case 89:
+contested 3
+Case 90:
+a 1
+c 4
+f 2
+h 1
+m 1
+n 3
+o 6
+p 1
+q 3
+s 8
+x 8
+y 4
+Case 91:
+contested 7
+Case 92:
+n 2
+x 1
+contested 6
+Case 93:
+contested 4
+Case 94:
+Case 95:
+contested 9
+Case 96:
+d 1
+i 2
+k 2
+m 24
+n 3
+q 1
+v 16
+contested 5
+Case 97:
+a 2
+p 2
+r 3
+Case 98:
+contested 8
+Case 99:
+contested 5
+Case 100:
+contested 13
